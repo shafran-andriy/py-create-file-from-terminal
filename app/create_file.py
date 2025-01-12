@@ -14,15 +14,13 @@ args = parser.parse_args()
 def create_file() -> None:
     with open(f"{args.f[0]}", "a+") as file:
         file.write(f"{time_string}\n")
-    line = ""
-    count = 1
-    while line != "stop":
-        line = input(f"Enter content line: Line{count} content:")
-        if line == "stop":
-            break
-        with open(f"{args.f[0]}", "a+") as file:
+        count = 1
+        while True:
+            line = input(f"Enter content line: Line{count} content: ")
+            if line == "stop":
+                break
             file.write(f"{count} {line}\n")
-        count += 1
+            count += 1
 
 
 def create_dirs() -> None:
