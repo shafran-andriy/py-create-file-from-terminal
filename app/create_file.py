@@ -21,6 +21,7 @@ def create_file() -> None:
                 break
             file.write(f"{count} {line}\n")
             count += 1
+        file.write(f"\n")
 
 
 def create_dirs() -> None:
