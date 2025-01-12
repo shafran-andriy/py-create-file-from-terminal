@@ -23,7 +23,7 @@ def create_file() -> None:
         if line == "stop":
             break
         with open(f"{args.f[0]}", "a+") as file:
-            file.write(f"{count} Line{count} content\n")
+            file.write(f"{count} {line}\n")
         count += 1
 
 
