@@ -28,12 +28,10 @@ def create_dirs() -> None:
     os.makedirs(os.path.join(*args.d), exist_ok=True)
 
 
-if args.f is None:
+if args.f is None or args.d is not None:
     create_dirs()
-else:
-    if args.d is None:
-        create_file()
-    else:
-        create_dirs()
-        os.chdir(os.path.join(*args.d))
-        create_file()
+
+if args.d is not None:
+    os.chdir(os.path.join(*args.d))
+if args.f is not None:
+    create_file()
